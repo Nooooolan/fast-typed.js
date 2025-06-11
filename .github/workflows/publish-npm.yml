@@ -19,11 +19,16 @@ jobs:
           node-version: '18.x' # 指定 Node.js 版本
           registry-url: 'https://registry.npmjs.org/' # 配置 npm 注册表 URL
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install dependencies
-        run: pnpm install # 安装项目依赖
+        run: npm install # 安装项目依赖
 
       - name: Build project
-        run: pnpm run build
+        run: npm run build
 
       - name: Publish to npm
         run: npm publish --access public
