@@ -115,8 +115,10 @@ export default class Typed {
       if (this.cursor) this.cursor.classList.remove(this.fadeOutClass);
     }
 
-    const humanize = this.humanizer(this.typeSpeed);
-    let numChars = 1;
+    // typeSpeed为0时humanize也为0
+    const humanize = this.typeSpeed === 0 ? 0 : this.humanizer(this.typeSpeed);
+    // 支持每次输出n个字符
+    let numChars = this.newCharPerStep || 1;
 
     if (this.pause.status === true) {
       this.setPauseStatus(curString, curStrPos, true);
@@ -131,7 +133,7 @@ export default class Typed {
       let pauseTime = 0;
       let substr = curString.substring(curStrPos);
       // check for an escape character before a pause value
-      // format: \^\d+ .. eg: ^1000 .. should be able to print the ^ too using ^^
+      // format: ^\d+ .. eg: ^1000 .. should be able to print the ^ too using ^^
       // single ^ are removed from string
       if (substr.charAt(0) === '^') {
         if (/^\^\d+/.test(substr)) {

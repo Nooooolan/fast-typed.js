@@ -89,6 +89,11 @@ const defaults = {
   contentType: 'html',
 
   /**
+   * @property {number} newCharPerStep 每次输出的字符数，默认1
+   */
+  newCharPerStep: 1,
+
+  /**
    * Before it begins typing
    * @param {Typed} self
    */

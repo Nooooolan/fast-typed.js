@@ -47,6 +47,9 @@ export default class Initializer {
     // typing speed
     self.typeSpeed = self.options.typeSpeed;
 
+    // 每次输出的字符数
+    self.newCharPerStep = self.options.newCharPerStep || 1;
+
     // add a delay before typing starts
     self.startDelay = self.options.startDelay;
 

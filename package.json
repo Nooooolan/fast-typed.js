@@ -1,10 +1,10 @@
 {
-  "name": "typed.js",
+  "name": "fast-typed.js",
   "version": "2.1.0",
   "homepage": "https://github.com/mattboldt/typed.js",
   "repository": "https://github.com/mattboldt/typed.js",
   "license": "MIT",
-  "author": "Matt Boldt",
+  "author": "Nolan",
   "description": "A JavaScript Typing Animation Library",
   "type": "module",
   "source": "src/typed.js",
