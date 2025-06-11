@@ -1,0 +1,31 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*' # 或者当创建以 'v' 开头的 tag 时触发（推荐用于版本发布）
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # 检出你的代码仓库
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x' # 指定 Node.js 版本
+          registry-url: 'https://registry.npmjs.org/' # 配置 npm 注册表 URL
+
+      - name: Install dependencies
+        run: pnpm install # 安装项目依赖
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
