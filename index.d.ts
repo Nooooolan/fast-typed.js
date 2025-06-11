@@ -5,7 +5,7 @@
  * @returns {object} a new Typed object
  */
 
-declare module 'typed.js' {
+declare module 'fast-typed' {
   export interface TypedOptions {
     /**
      * strings to be typed
@@ -83,6 +83,10 @@ declare module 'typed.js' {
      * 'html' or 'null' for plaintext
      */
     contentType?: string;
+    /**
+     * number of characters output each time, default to 1
+     */
+    newCharPerStep?: number;
     /**
      * Before it begins typing the first string
      */
