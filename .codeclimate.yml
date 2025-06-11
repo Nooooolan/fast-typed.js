@@ -16,16 +16,15 @@ engines:
     enabled: false
 ratings:
   paths:
-    - "**.css"
-    - "**.inc"
-    - "**.js"
-    - "**.jsx"
-    - "**.module"
-    - "**.php"
-    - "**.py"
-    - "**.rb"
+    - '**.css'
+    - '**.inc'
+    - '**.js'
+    - '**.jsx'
+    - '**.module'
+    - '**.php'
+    - '**.py'
+    - '**.rb'
 exclude_paths:
   - dist/
   - lib/
-  - docs/
   - assets/
