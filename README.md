@@ -12,31 +12,17 @@
 
 ## 安装与使用
 
-### CDN
-
-```html
-<script src="/path/to/fast-typed.js"></script>
-<span id="element"></span>
-<script>
-  var typed = new Typed('#element', {
-    strings: ['<i>First</i> sentence.', '& a second sentence.'],
-    typeSpeed: 0,
-    newCharPerStep: 5, // 每次输出5个字符
-  });
-</script>
-```
-
 ### NPM
 
 ```bash
-npm install fast-typed.js
+npm install fast-typed
 ```
 
 ### ESM 用法
 
 ```js
-import Typed from 'fast-typed.js';
-const typed = new Typed('#element', {
+import FastTyped from 'fast-typed';
+const typed = new FastTyped('#element', {
   strings: ['<i>First</i> sentence.', '& a second sentence.'],
   typeSpeed: 0,
   newCharPerStep: 10,
@@ -65,7 +51,7 @@ const typed = new Typed('#element', {
 ## 示例
 
 ```js
-var typed = new Typed('#element', {
+var typed = new FastTyped('#element', {
   strings: ['极速输出', '一次输出多个字符！'],
   typeSpeed: 0,
   newCharPerStep: 8,
